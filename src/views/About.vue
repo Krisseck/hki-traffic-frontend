@@ -1,5 +1,5 @@
 <template>
   <div id="page-about">
-    Hei
+    Hello
   </div>
 </template>
