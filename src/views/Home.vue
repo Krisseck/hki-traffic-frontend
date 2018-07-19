@@ -75,6 +75,7 @@ export default {
     this.$options.markerIcon = new L.Icon.Default({imagePath: '/'});
 
     this.$options.tileLayer = L.tileLayer('http://tiles.kartat.kapsi.fi/taustakartta/{z}/{x}/{y}.jpg', {
+      detectRetina: true,
       attribution: '&copy; Map: <a href="http://www.maanmittauslaitos.fi/avoindata">Maanmittauslaitos</a>'
     }).addTo(this.$options.map);
 
