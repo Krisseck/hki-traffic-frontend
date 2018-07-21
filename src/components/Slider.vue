@@ -19,13 +19,6 @@ export default {
       time: 900
     }
   },
-  filters: {
-    formatTime: function(value) {
-
-      return (value < 1000 ? "0" + value/100 + ":00" : value/100 + ":00");
-
-    }
-  },
   mounted: function() {
 
     var component = this;
@@ -67,15 +60,16 @@ export default {
 @import '../../node_modules/nouislider/distribute/nouislider.css';
 
 #time-range-container {
-  position: fixed;
-  bottom: 0;
+  position: absolute;
+  top: 88vh;
   left: 50%;
   width: 20rem;
-  height: 4rem;
+  height: 10vh;
   margin-left: -10rem;
   background: white;
   z-index: 1001;
-  border-radius: 1rem 1rem 0 0;
+  border-radius: 1rem;
+  text-align: center;
   #time-range-slider {
     width: 18rem;
     margin: 1rem auto;
