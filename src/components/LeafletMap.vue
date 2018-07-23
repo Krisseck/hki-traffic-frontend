@@ -31,7 +31,9 @@ export default {
 
       var component = this;
 
-      stops.forEach(function(item) {
+      stops.forEach(function(item, index) {
+
+        item.stopIndex = index;
 
         var marker = L.marker([item.lat, item.lng], {
           icon: component.$options.markerIcon
