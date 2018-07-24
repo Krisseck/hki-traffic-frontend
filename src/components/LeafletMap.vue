@@ -103,7 +103,16 @@ export default {
       zoom: 12
     });
 
-    component.$options.markerIcon = new L.Icon.Default({imagePath: '/'});
+    component.$options.markerIcon = L.icon({
+      iconUrl: '/marker-icon.png',
+      iconRetinaUrl: '/marker-icon-2x.png',
+      shadowUrl: '/marker-shadow.png',
+      iconSize: [64, 64],
+      shadowSize: [41, 41],
+      iconAnchor: [32, 64],
+      shadowAnchor: [15, 40],
+      tooltipAnchor: [18, -48]
+    });
 
     component.$options.tileLayer = L.tileLayer('http://tiles.kartat.kapsi.fi/taustakartta/{z}/{x}/{y}.jpg', {
       detectRetina: true,
