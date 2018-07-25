@@ -14,6 +14,9 @@
         <p class="content">Traffic patterns are predicted using a custom-trained neural network AI. The source code is viewable under the title "Open Source".</p>
         <h3 class="title is-3">Video</h3>
         <h3 class="title is-3">Screenshots</h3>
+        <p class="content screenshots">
+          <a href="/helsinki-traffic-screenshot-1.jpg" target="_blank"><img src="/helsinki-traffic-screenshot-1-thumbnail.jpg" alt="Helsinki Traffic Forecast: Screenshot 1"></a> <a href="/helsinki-traffic-screenshot-2.jpg" target="_blank"><img src="/helsinki-traffic-screenshot-2-thumbnail.jpg" alt="Helsinki Traffic Forecast: Screenshot 2"></a> <a href="/helsinki-traffic-screenshot-3.jpg" target="_blank"><img src="/helsinki-traffic-screenshot-3-thumbnail.jpg" alt="Helsinki Traffic Forecast: Screenshot 3"></a> <a href="/helsinki-traffic-screenshot-4.jpg" target="_blank"><img src="/helsinki-traffic-screenshot-4-thumbnail.jpg" alt="Helsinki Traffic Forecast: Screenshot 4"></a> <a href="/helsinki-traffic-screenshot-5.jpg" target="_blank"><img src="/helsinki-traffic-screenshot-5-thumbnail.jpg" alt="Helsinki Traffic Forecast: Screenshot 5"></a>
+        </p>
         <h3 class="title is-3">Source material</h3>
         <p class="content">Traffic data: <a href="https://hri.fi/data/en_GB/dataset/liikennemaarat-helsingissa" target="_blank">Traffic volumes in Helsinki by HRI</a><br/>
           Map tiles: <a href="https://www.maanmittauslaitos.fi/en/maps-and-spatial-data/expert-users/product-descriptions/background-map-series-raster" target="_blank">Background map series by National Land Survey of Finland</a> (hosted by <a href="http://kartat.kapsi.fi/" target="_blank">Kapsi ry</a>)</p>
@@ -47,3 +50,19 @@
     </div>
   </div>
 </template>
+
+<style lang="scss">
+
+.screenshots {
+  img {
+    height: 8rem;
+    width: auto;
+    border: 1px solid #ccc;
+    margin: 0 2rem 2rem 0;
+    &:hover {
+      border-color: #666;
+    }
+  }
+}
+
+</style>
