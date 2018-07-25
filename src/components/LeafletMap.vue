@@ -133,6 +133,11 @@ export default {
 #map {
   width: 100vw;
   height: 100vh;
+  .leaflet-control-container {
+    .leaflet-top.leaflet-left {
+      top: 4rem;
+    }
+  }
   .car-average {
     color: white;
     padding: 0.2rem;

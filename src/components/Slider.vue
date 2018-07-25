@@ -1,7 +1,9 @@
 <template>
-  <div id="time-range-container">
-    <p>Time is: {{ time | formatTime }}</p>
-    <div id="time-range-slider"></div>
+  <div id="time-range-container" class="card">
+    <div class="card-content">
+      <p>Time is: {{ time | formatTime }}</p>
+      <div id="time-range-slider"></div>
+    </div>
   </div>
 </template> 
 
@@ -61,17 +63,17 @@ export default {
 
 #time-range-container {
   position: absolute;
-  top: 88vh;
+  top: 80vh;
   left: 50%;
-  width: 20rem;
-  height: 10vh;
-  margin-left: -10rem;
-  background: white;
+  width: 18rem;
+  height: 17vh;
+  margin-left: -9rem;
   z-index: 1001;
-  border-radius: 1rem;
   text-align: center;
+  .card-content {
+    padding: 1rem;
+  }
   #time-range-slider {
-    width: 18rem;
     margin: 1rem auto;
   }
 }
