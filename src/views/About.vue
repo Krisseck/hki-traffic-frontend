@@ -13,6 +13,9 @@
         <p class="content">Using this tool, traffic patterns in Helsinki area can be inspected and analyzed. The data is accessible per hour, and it includes information breakdowns, for example traffic by vehicle type.</p>
         <p class="content">Traffic patterns are predicted using a custom-trained neural network AI. The source code is viewable under the title "Open Source".</p>
         <h3 class="title is-3">Video</h3>
+        <p class="content">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/p0psRmuNzEc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </p>
         <h3 class="title is-3">Screenshots</h3>
         <p class="content screenshots">
           <a href="/helsinki-traffic-screenshot-1.jpg" target="_blank"><img src="/helsinki-traffic-screenshot-1-thumbnail.jpg" alt="Helsinki Traffic Forecast: Screenshot 1"></a> <a href="/helsinki-traffic-screenshot-2.jpg" target="_blank"><img src="/helsinki-traffic-screenshot-2-thumbnail.jpg" alt="Helsinki Traffic Forecast: Screenshot 2"></a> <a href="/helsinki-traffic-screenshot-3.jpg" target="_blank"><img src="/helsinki-traffic-screenshot-3-thumbnail.jpg" alt="Helsinki Traffic Forecast: Screenshot 3"></a> <a href="/helsinki-traffic-screenshot-4.jpg" target="_blank"><img src="/helsinki-traffic-screenshot-4-thumbnail.jpg" alt="Helsinki Traffic Forecast: Screenshot 4"></a> <a href="/helsinki-traffic-screenshot-5.jpg" target="_blank"><img src="/helsinki-traffic-screenshot-5-thumbnail.jpg" alt="Helsinki Traffic Forecast: Screenshot 5"></a>
