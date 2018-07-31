@@ -1,4 +1,6 @@
-# helsinki-traffic-wc
+# Helsinki Traffic Forecast
+
+http://helsinki-traffic-forecast.vaiste.com/
 
 ## Project setup
 ```
