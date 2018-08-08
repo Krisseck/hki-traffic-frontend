@@ -9,9 +9,10 @@
     <div class="section">
       <div class="container">
         <h3 class="title is-3 is-spaced">Description</h3>
-        <p class="content"><strong>Helsinki Traffic Forecast</strong> is a platform used to analyze and predict traffic patterns in Helsinki. It uses open data provided by <a href="https://hri.fi" target="_blank">Helsinki Region Infoshare</a> and <a href="https://www.maanmittauslaitos.fi/en" target="_blank">National Land Survey of Finland</a>.</p>
+        <p class="content"><strong>Helsinki Traffic Forecast</strong> is a platform used to analyze and predict traffic patterns in Helsinki. It uses open data provided by <a href="https://hri.fi" target="_blank">Helsinki Region Infoshare</a>, <a href="https://www.maanmittauslaitos.fi/en" target="_blank">National Land Survey of Finland</a> and <a href="http://en.ilmatieteenlaitos.fi/" target="_blank">Finnish Meteorological Institute</a>.</p>
         <p class="content">Using this tool, traffic patterns in Helsinki area can be inspected and analyzed. The data is accessible per hour, and it includes information breakdowns, for example traffic by vehicle type.</p>
         <p class="content">Traffic patterns are predicted using a custom-trained neural network AI. The source code is viewable under the title "Open Source".</p>
+        <p class="content">Air quality is displayed on the map using the average amount measured nitrogen dioxide values.</p>
         <h3 class="title is-3">Video</h3>
         <p class="content">
           <iframe width="560" height="315" src="https://www.youtube.com/embed/p0psRmuNzEc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -22,7 +23,8 @@
         </p>
         <h3 class="title is-3">Source material</h3>
         <p class="content">Traffic data: <a href="https://hri.fi/data/en_GB/dataset/liikennemaarat-helsingissa" target="_blank">Traffic volumes in Helsinki by HRI</a><br/>
-          Map tiles: <a href="https://www.maanmittauslaitos.fi/en/maps-and-spatial-data/expert-users/product-descriptions/background-map-series-raster" target="_blank">Background map series by National Land Survey of Finland</a> (hosted by <a href="http://kartat.kapsi.fi/" target="_blank">Kapsi ry</a>)</p>
+          Map tiles: <a href="https://www.maanmittauslaitos.fi/en/maps-and-spatial-data/expert-users/product-descriptions/background-map-series-raster" target="_blank">Background map series by National Land Survey of Finland</a> (hosted by <a href="http://kartat.kapsi.fi/" target="_blank">Kapsi ry</a>)<br/>
+          Air Quality: <a href="https://en.ilmatieteenlaitos.fi/open-data" target="_blank">Finnish Meteorological Institute</a></p>
         <h3 class="title is-3">Technologies used</h3>
         <h5 class="title is-5">Frontend</h5>
         <p class="content">

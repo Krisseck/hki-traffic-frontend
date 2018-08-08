@@ -10,12 +10,15 @@ import EventBus from '@/event-bus.js';
 
 import stops from '@/stops.json';
 
+import airQuality from '@/air.json';
+
 export default {
   name: 'LeafletMap',
   map: {},
   tileLayer: {},
   markerIcon: {},
   markers: {},
+  circles: {},
   data: function() {
     return {
       time: 900
@@ -24,6 +27,72 @@ export default {
   formatAverageCars: function(value) {
 
     return "<span class='car-average car-average-color-" + Math.round(value/200) + "'>" + Math.round(value) + '</span>';
+
+  },
+  formatAverageAirQuality: function(value) {
+
+    return "<span class='air-quality-average air-quality-average-color-" + Math.round(value/10) + "'>" + Math.round(value) + '</span>';
+
+  },
+  formatAverageAirQualityColor: function(value) {
+
+    value = Math.round(value/10);
+
+    var color = '';
+
+    switch(value) {
+      case 0:
+        color = '#0f0';
+      break;
+      case 1:
+        color = '#2f0';
+      break;
+      case 2:
+        color = '#4f0';
+      break;
+      case 3:
+        color = '#6f0';
+      break;
+      case 4:
+        color = '#8f0';
+      break;
+      case 5:
+        color = '#af0';
+      break;
+      case 6:
+        color = '#cf0';
+      break;
+      case 7:
+        color = '#ef0';
+      break;
+      case 8:
+        color = '#ff0';
+      break;
+      case 9:
+        color = '#fd0';
+      break;
+      case 10:
+        color = '#fb0';
+      break;
+      case 11:
+        color = '#f90';
+      break;
+      case 12:
+        color = '#f70';
+      break;
+      case 13:
+        color = '#f50';
+      break;
+      case 14:
+        color = '#f30';
+      break;
+      default:
+        color = '#f00';
+      break;
+
+    }
+
+    return color;
 
   },
   methods: {
@@ -36,7 +105,7 @@ export default {
         item.stopIndex = index;
 
         var marker = L.marker([item.lat, item.lng], {
-          icon: component.$options.markerIcon
+          icon: component.$options.markerStopIcon
         }).addTo(component.$options.map);
 
         var totalCars = 0;
@@ -61,6 +130,24 @@ export default {
 
       });
 
+      airQuality.forEach(function(item) {
+
+        var marker = L.marker([item.latitude, item.longitude], {
+          icon: component.$options.markerTowerIcon
+        }).addTo(component.$options.map);
+
+        marker.bindTooltip('<strong>NO<sub>2</sub></strong> - ' + component.$options.formatAverageAirQuality(item.data[component.time].nitrogen_dioxide), {
+          permanent: true
+        });
+
+       var circle = L.circle([item.latitude, item.longitude], {radius: 2500, stroke: false, color: component.$options.formatAverageAirQualityColor(item.data[component.time].nitrogen_dioxide)}).addTo(component.$options.map);
+
+        component.$options.circles[item.code] = circle;
+
+        component.$options.markers[item.code] = marker;
+
+      });
+
     },
     refreshMarkers: function() {
 
@@ -79,6 +166,14 @@ export default {
         }
 
         component.$options.markers[item.id].setTooltipContent('<strong>' + item.id + '</strong> - ' + component.$options.formatAverageCars(totalCars));
+
+      });
+
+      airQuality.forEach(function(item) {
+
+        component.$options.markers[item.code].setTooltipContent('<strong>NO<sub>2</sub></strong> - ' + component.$options.formatAverageAirQuality(item.data[component.time].nitrogen_dioxide));
+
+        component.$options.circles[item.code].setStyle({stroke: false, color: component.$options.formatAverageAirQualityColor(item.data[component.time].nitrogen_dioxide)});
 
       });
 
@@ -103,9 +198,20 @@ export default {
       zoom: 12
     });
 
-    component.$options.markerIcon = L.icon({
-      iconUrl: '/marker-icon.png',
-      iconRetinaUrl: '/marker-icon-2x.png',
+    component.$options.markerStopIcon = L.icon({
+      iconUrl: '/marker-stop.png',
+      iconRetinaUrl: '/marker-stop-2x.png',
+      shadowUrl: '/marker-shadow.png',
+      iconSize: [64, 64],
+      shadowSize: [41, 41],
+      iconAnchor: [32, 64],
+      shadowAnchor: [15, 40],
+      tooltipAnchor: [18, -48]
+    });
+
+    component.$options.markerTowerIcon = L.icon({
+      iconUrl: '/marker-tower.png',
+      iconRetinaUrl: '/marker-tower-2x.png',
       shadowUrl: '/marker-shadow.png',
       iconSize: [64, 64],
       shadowSize: [41, 41],
@@ -219,6 +325,70 @@ export default {
   .car-average-color-44,
   .car-average-color-45 {
     background: #ff0000;
+  }
+  .air-quality-average {
+    color: white;
+    padding: 0.2rem;
+  }
+  .air-quality-average-color-0 {
+    background: #0f0;
+  }
+  .air-quality-average-color-1 {
+    background: #2f0;
+  }
+  .air-quality-average-color-2 {
+    background: #4f0;
+  }
+  .air-quality-average-color-3 {
+    background: #6f0;
+  }
+  .air-quality-average-color-4 {
+    background: #8f0;
+  }
+  .air-quality-average-color-5 {
+    background: #af0;
+  }
+  .air-quality-average-color-6 {
+    background: #cf0;
+  }
+  .air-quality-average-color-7 {
+    background: #ef0;
+  }
+  .air-quality-average-color-8 {
+    background: #ff0;
+  }
+  .air-quality-average-color-9 {
+    background: #fd0;
+  }
+  .air-quality-average-color-10 {
+    background: #fb0;
+  }
+  .air-quality-average-color-11 {
+    background: #f90;
+  }
+  .air-quality-average-color-12 {
+    background: #f70;
+  }
+  .air-quality-average-color-13 {
+    background: #f50;
+  }
+  .air-quality-average-color-14 {
+    background: #f30;
+  }
+  .air-quality-average-color-15,
+  .air-quality-average-color-16,
+  .air-quality-average-color-17,
+  .air-quality-average-color-18,
+  .air-quality-average-color-19,
+  .air-quality-average-color-20,
+  .air-quality-average-color-21,
+  .air-quality-average-color-22,
+  .air-quality-average-color-23,
+  .air-quality-average-color-24,
+  .air-quality-average-color-25,
+  .air-quality-average-color-26,
+  .air-quality-average-color-27 {
+    background: #f00;
   }
 }
 
