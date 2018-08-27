@@ -5,6 +5,7 @@
       <ul class="menu-list">
         <li><router-link to="/" v-on:click.native="menuOpened = false" active-class="is-active" exact>Home</router-link></li>
         <li><router-link to="/about" v-on:click.native="menuOpened = false" active-class="is-active" exact>About</router-link></li>
+        <li><router-link to="/melbourne" v-on:click.native="menuOpened = false" active-class="is-active" exact>Melbourne (beta)</router-link></li>
       </ul>
     </aside>
     <router-view/>
