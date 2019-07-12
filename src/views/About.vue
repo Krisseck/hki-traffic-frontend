@@ -13,6 +13,7 @@
         <p class="content">Using this tool, traffic patterns in Helsinki area can be inspected and analyzed. The data is accessible per hour, and it includes information breakdowns, for example traffic by vehicle type.</p>
         <p class="content">Traffic patterns are predicted using a custom-trained neural network AI. The source code is viewable under the title "Open Source".</p>
         <p class="content">Air quality is displayed on the map using the average amount measured nitrogen dioxide values.</p>
+        <p class="content">The Global Forecast model can be used for various nudging solutions. A planned application is to offer citizen predictive information about their neighbourhood's air quality: bad air quality on your own area and neighbourhood can be a motivational reason to choose public transport on that day (and take the step for the future change of habits, too). </p>
         <h3 class="title is-3">Video</h3>
         <p class="content">
           <iframe width="560" height="315" src="https://www.youtube.com/embed/p0psRmuNzEc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
